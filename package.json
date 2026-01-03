@@ -2,7 +2,7 @@
   "name": "pluton-syntax",
   "main": "./lib/main.js",
   "theme": "syntax",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Anna's syntax theme designed for C/Zig, the goal is to highlight the most important parts of the code, and make comments easily viewable",
   "keywords": [
     "syntax",
