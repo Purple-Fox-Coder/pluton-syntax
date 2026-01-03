@@ -1,0 +1,125 @@
+/*
+   This defines styling rules for syntax classes.
+
+   See the naming conventions for a list of syntax classes:
+   https://flight-manual.atom.io/hacking-atom/sections/syntax-naming-conventions
+
+   When styling rules conflict:
+   - The last rule overrides previous rules.
+   - The rule with most classes and pseudo-classes overrides the last rule.
+*/
+
+.syntax--function {
+  color: @blue;
+}
+
+.syntax--storage {
+  color: @dark-purple;
+}
+
+// if for return
+.syntax--keyword {
+  color: @dark-purple;
+
+  // storage types (struct, union, enum)
+  &.syntax--storage {
+    color: @dark-cyan;
+  }
+
+  &.operator {
+    color: desaturate(darken(@orange, 20), 20);
+  }
+
+  // ||, &&, etc.
+  &.syntax--logical,
+  &.syntax--comparison,
+  &.syntax--bitwise {
+    color: @dark-red;
+  }
+
+  &.syntax--arithmetic,
+  &.syntax--increment,
+  &.syntax--decrement {
+    color: @purple
+  }
+
+  // #include, #define
+  &.syntax--include,
+  &.syntax--define {
+    color: @dark-orange;
+  }
+}
+
+.syntax--support,
+.syntax--entity  {
+  color: @blue;
+
+  &.syntax--namespace {
+    color: lighten(@cyan, 10);
+  }
+
+  &.syntax--type,
+  &.syntax--storage {
+    color: desaturate(darken(@dark-cyan, 10), 30);
+  }
+
+  &.syntax--label {
+    color: @syntax-text-color;
+    text-decoration: underline;
+  }
+}
+
+.syntax--variable {
+  color: @red;
+
+  &.syntax--parameter {
+    color: darken(@red, 5);
+  }
+
+  &.syntax--member {
+    color: lighten(@red, 5);
+  }
+}
+
+.syntax--constant,
+.syntax--literal {
+  color: @orange;
+
+  &.syntax--language {
+    color: darken(@orange, 15);
+  }
+}
+
+.syntax--string {
+  color: @green;
+
+  &.syntax--single {
+    color: lighten(desaturate(@green, 20), 30);
+  }
+}
+
+.syntax--comment {
+  color: darken(desaturate(@purple, 65), 15);
+  font-style: italic;
+}
+
+.syntax--documentation {
+  color: desaturate(darken(@purple, 25), 70);
+  font-style: italic;
+}
+
+.syntax--punctuation {
+  color: lighten(@dark-gray, 10);
+}
+
+.syntax--escape {
+  color: @cyan;
+}
+
+.syntax--modifier {
+  color: @dark-blue;
+}
+
+.syntax--builtin {
+  color: @orange;
+}
